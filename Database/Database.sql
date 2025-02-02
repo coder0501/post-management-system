@@ -15,6 +15,7 @@ CREATE TABLE blogs (
     description TEXT,
     status ENUM('Pending', 'Approved', 'Rejected') DEFAULT 'Pending',
     slug VARCHAR(255) UNIQUE,
+    file VARCHAR(255),
     user_id INT,
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -29,5 +30,5 @@ VALUES
 
 INSERT INTO blogs (title, category, description, status, slug, user_id) 
 VALUES 
-    ('Tech Blog 1', 'Tech', 'Description of the first tech blog', 'Approved', 'tech-blog-1', 1),
-    ('Health Blog 1', 'Health', 'Description of the first health blog', 'Pending', 'health-blog-1', 2);
+    ('Tech Blog 1', 'Tech', 'Description of the first tech blog', 'Approved', 'tech-blog-1', 'fileURL', 1),
+    ('Health Blog 1', 'Health', 'Description of the first health blog', 'Pending', 'health-blog-1', 'fileURL', 2);
